@@ -7,6 +7,8 @@
 # Pull base image.
 FROM ubuntu:14.04
 
+MAINTAINER Gani Utomo <ganiutomo@gmail.com>
+
 # Install.
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
@@ -15,10 +17,8 @@ RUN \
   apt-get -y install openjdk-7-jre-headless && \
   rm -rf /var/lib/apt/lists/*
   
-ADD apache-jmeter-2.11.tgz apache-jmeter-2.11.tgz
+ADD apache-jmeter-2.11.tgz /usr/local/
 
-RUN \
-  tar -xzf apache-jmeter-2.11.tgz /usr/local/ && \
-  mv /usr/local/apache-jmeter-2.11 /usr/local/jmeter
+RUN mv /usr/local/apache-jmeter-2.11 /usr/local/jmeter
 
-ENV PATH=$PATH:/usr/local/jmeter/bin
+ENV PATH /usr/local/jmeter/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
