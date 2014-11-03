@@ -18,7 +18,7 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   wget -q http://archive.apache.org/dist/jmeter/binaries/apache-jmeter-2.11.tgz && \
   tar -xzf apache-jmeter-2.11.tgz && \
-  mv apache-jmeter-2.11.tgz && \
+  rm apache-jmeter-2.11.tgz && \
   mv apache-jmeter-2.11 /usr/local/jmeter
 
 ENV PATH /usr/local/jmeter/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
