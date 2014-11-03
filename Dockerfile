@@ -22,3 +22,5 @@ RUN \
   mv apache-jmeter-2.11 /usr/local/jmeter
 
 ENV PATH /usr/local/jmeter/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+EXPOSE 1099
